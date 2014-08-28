@@ -1,0 +1,21 @@
+#a1{background:url("../images/coi_1.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#a2{background:url("../images/coi_2.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#a3{background:url("../images/coi_3.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#a4{background:url("../images/coi_4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height: 32px;width:32px;font-size:0px;}
+
+#b1{background:url("../images/coi_1.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#b2{background:url("../images/coi_2.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#b3{background:url("../images/coi_3.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#b4{background:url("../images/coi_4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+
+#c1{background:url("../images/coi_1.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#c2{background:url("../images/coi_2.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#c3{background:url("../images/coi_3.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#c4{background:url("../images/coi_4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+
+#d1{background:url("../images/coi_1.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#d2{background:url("../images/coi_2.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#d3{background:url("../images/coi_3.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+#d4{background:url("../images/coi_4.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);height:32px;width:32px;font-size:0px;}
+
+.ui-sortable li {display: inline-block;padding: 0 10px;}

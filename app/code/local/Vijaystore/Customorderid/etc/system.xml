@@ -1,0 +1,589 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <myconf_vijaystore translate="label" module="customorderid">
+            <label>VijayStore</label>
+            <sort_order>300</sort_order>
+        </myconf_vijaystore>
+    </tabs>	
+    <sections>
+        <customorderid_tab translate="label" module="customorderid">
+            <label>Custom Order Id</label>
+            <tab>myconf_vijaystore</tab>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+			<!-- General Setting -->
+                <customorderid_setting translate="label comment">
+                    <label>General Setting</label>
+                    <sort_order>503</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                      <customorderid_active translate="label comment">
+                            <label>Custom Order Id</label>
+							<frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+							<comment>Custom Order Id Enable/Disable</comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </customorderid_active>
+                     </fields>
+                </customorderid_setting>
+				
+				<!-- Order Setting -->
+                <customorderid_order translate="label comment">
+                    <label>Order Setting</label>
+                    <sort_order>504</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<order_enable translate="label comment">
+                            <label>Custom Order Enable</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Enable/Disable the Custom Order</comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_enable>
+						<order_text translate="label comment">
+                            <label>Custom Order Text</label>
+							<frontend_type>Text</frontend_type>
+							<!-- <comment>Custom Order Text</comment> -->
+							<validate>required-entry</validate>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_text>
+						<order_number translate="label comment">
+                            <label>Custom Order Increment Number</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry validate-number</validate>
+							<comment>Custom Order Increment Number</comment>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_number>	
+						<order_date_use translate="label comment">
+                            <label>Order Use Date</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Date in Increment Id</comment>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_date_use>
+						<order_date translate="label comment">
+                            <label>Order Date</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php date formats [d-m-Y, Y/m/d, m-d-Y, etc..,]</comment>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><order_date_use>1</order_date_use></depends>
+						</order_date>
+						<order_time_use translate="label comment">
+                            <label>Order Use Time</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Time in Increment Id</comment>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_time_use>
+						<order_time translate="label comment">
+                            <label>Order Time</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php time formats [h:i:s, etc..,]</comment>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><order_time_use>1</order_time_use></depends>
+						</order_time>
+						<order_increment translate="label comment">
+                            <label>Each Order Increment Id</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Each Order Increment Id</comment>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_increment>
+						<order_padding translate="label comment">
+                            <label>Order Increment Id Padding Length</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Set Minimum Length of Increment Id</comment>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_padding>
+						<order_padding_char translate="label comment">
+                            <label>Order Increment Id Padding Character</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Order Increment Id Padding Character</comment>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_padding_char>
+						<order_content_rearrange translate="label comment">
+                            <label>Rearrange</label>
+							<frontend_type>hidden</frontend_type>
+                            <validate>required-entry</validate>
+							<!-- <comment>Drag and Drop to rearrange the order</comment> -->
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_content_rearrange>
+						<order_splitting translate="label comment">
+                            <label>Splitting Order</label>
+							<frontend_type>select</frontend_type>
+							<source_model>customorderid/dropdown_split</source_model> 
+                            <!-- <validate>required-entry</validate> -->
+							<comment>Split Text-Date-time-Id eg: ORD-26/10/1991-07:30-108</comment>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</order_splitting>
+                     </fields>
+                </customorderid_order>
+				
+				<!-- Invoice Setting -->
+                <customorderid_invoice translate="label comment">
+                    <label>Invoice Setting</label>
+                    <sort_order>505</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<invoice_enable translate="label comment">
+                            <label>Invoice Enable</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Enable/Disable the Invoice</comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_enable>
+						<invoice_text translate="label comment">
+                            <label>Custom Invoice Text</label>
+							<frontend_type>Text</frontend_type>
+							<comment>Invoice Order Text</comment>
+							<validate>required-entry</validate>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_text>
+						<invoice_number translate="label comment">
+                            <label>Custom Invoice Increment Number</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry validate-number</validate>
+							<comment>Custom Invoice Increment Number</comment>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_number>	
+						<invoice_date_use translate="label comment">
+                            <label>Invoice Use Date</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Date in Increment Id</comment>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_date_use>
+						<invoice_date translate="label comment">
+                            <label>Invoice Date</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php date formats [d-m-Y, Y/m/d, m-d-Y, etc..,]</comment>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><invoice_date_use>1</invoice_date_use></depends>
+						</invoice_date>
+						<invoice_time_use translate="label comment">
+                            <label>Invoice Use Time</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Time in Increment Id</comment>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_time_use>
+						<invoice_time translate="label comment">
+                            <label>Invoice Time</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php time formats [h:i:s, etc..,]</comment>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><invoice_time_use>1</invoice_time_use></depends>
+						</invoice_time>
+						<invoice_increment translate="label comment">
+                            <label>Each Invoice Increment Id</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Each Invoice Order Increment Id</comment>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_increment>
+						<invoice_padding translate="label comment">
+                            <label>Invoice Increment Id Padding Length</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Set Minimum Length of Increment Id</comment>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_padding>
+						<invoice_padding_char translate="label comment">
+                            <label>Invoice Increment Id Padding Character</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Invoice Increment Id Padding Character</comment>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_padding_char>
+						<invoice_content_rearrange translate="label comment">
+                            <label>Rearrange</label>
+							<frontend_type>hidden</frontend_type>
+                            <validate>required-entry</validate>
+							<!-- <comment>Drag and Drop to rearrange the order</comment> -->
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_content_rearrange>
+						<invoice_splitting translate="label comment">
+                            <label>Splitting Invoice</label>
+							<frontend_type>select</frontend_type>
+							<source_model>customorderid/dropdown_split</source_model> 
+                            <!-- <validate>required-entry</validate> -->
+							<comment>Split Text-Date-time-Id eg: ORD-26/10/1991-07:30-108</comment>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</invoice_splitting>
+                     </fields>
+                </customorderid_invoice>
+
+				<!-- Shipping Setting -->
+                <customorderid_shipping translate="label comment">
+                    <label>Shipping Setting</label>
+                    <sort_order>506</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<shipping_enable translate="label comment">
+                            <label>Shipping Enable</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Enable/Disable the Shipping</comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_enable>
+						<shipping_text translate="label comment">
+                            <label>Custom Shipping Text</label>
+							<frontend_type>Text</frontend_type>
+							<comment>Shipping Order Text</comment>
+							<validate>required-entry</validate>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_text>
+						<shipping_number translate="label comment">
+                            <label>Custom Shipping Increment Number</label>
+							<frontend_type>Text</frontend_type>
+							<validate>required-entry validate-number</validate>
+							<comment>Custom Shipping Increment Number</comment>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_number>	
+						<shipping_date_use translate="label comment">
+                            <label>Shipping Use Date</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Date in Increment Id</comment>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_date_use>
+						<shipping_date translate="label comment">
+                            <label>Shipping Date</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php date formats [d-m-Y, Y/m/d, m-d-Y, etc..,]</comment>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><shipping_date_use>1</shipping_date_use></depends>
+						</shipping_date>
+						<shipping_time_use translate="label comment">
+                            <label>Shipping Use Time</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Time in Increment Id</comment>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_time_use>
+						<shipping_time translate="label comment">
+                            <label>Shipping Time</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php time formats [h:i:s, etc..,]</comment>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><shipping_time_use>1</shipping_time_use></depends>
+						</shipping_time>
+						<shipping_increment translate="label comment">
+                            <label>Each Shipping Increment Id</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Each Shipping Order Increment Id</comment>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_increment>
+						<shipping_padding translate="label comment">
+                            <label>Shipping Increment Id Padding Length</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Set Minimum Length of Increment Id</comment>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_padding>
+						<shipping_padding_char translate="label comment">
+                            <label>Shipping Increment Id Padding Character</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Shipping Increment Id Padding Character</comment>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_padding_char>
+						<shipping_content_rearrange translate="label comment">
+                            <label>Rearrange</label>
+							<frontend_type>hidden</frontend_type>
+                            <validate>required-entry</validate>
+							<!-- <comment>Drag and Drop to rearrange the order</comment> -->
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_content_rearrange>
+						<shipping_splitting translate="label comment">
+                            <label>Splitting Shipping</label>
+							<frontend_type>select</frontend_type>
+							<source_model>customorderid/dropdown_split</source_model> 
+                            <!-- <validate>required-entry</validate> -->
+							<comment>Split Text-Date-time-Id eg: ORD-26/10/1991-07:30-108</comment>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</shipping_splitting>
+                     </fields>
+                </customorderid_shipping>
+				
+				<!-- CreditMemo Setting -->
+                <customorderid_creditmemo translate="label comment">
+                    <label>CreditMemo Setting</label>
+                    <sort_order>507</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<creditmemo_enable translate="label comment">
+                            <label>CreditMemo Enable</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Enable/Disable the CreditMemo</comment>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_enable>
+						<creditmemo_text translate="label comment">
+                            <label>Custom CreditMemo Text</label>
+							<frontend_type>Text</frontend_type>
+							<comment>CreditMemo Order Text</comment>
+							<validate>required-entry</validate>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_text>
+						<creditmemo_number translate="label comment">
+                            <label>Custom CreditMemo Increment Number</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry validate-number</validate>
+							<comment>Custom CreditMemo Increment Number</comment>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_number>	
+						<creditmemo_date_use translate="label comment">
+                            <label>CreditMemo Use Date</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Date in Increment Id</comment>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_date_use>
+						<creditmemo_date translate="label comment">
+                            <label>CreditMemo Date</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php date formats [d-m-Y, Y/m/d, m-d-Y, etc..,]</comment>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><creditmemo_date_use>1</creditmemo_date_use></depends>
+						</creditmemo_date>
+						<creditmemo_time_use translate="label comment">
+                            <label>CreditMemo Use Time</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model> 
+                            <validate>required-entry</validate>
+							<comment>Use Time in Increment Id</comment>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_time_use>
+						<creditmemo_time translate="label comment">
+                            <label>CreditMemo Time</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Use Php time formats [h:i:s, etc..,]</comment>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+							<depends><creditmemo_time_use>1</creditmemo_time_use></depends>
+						</creditmemo_time>
+						<creditmemo_increment translate="label comment">
+                            <label>Each CreditMemo Increment Id</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Each CreditMemo Order Increment Id</comment>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_increment>
+						<creditmemo_padding translate="label comment">
+                            <label>CreditMemo Increment Id Padding Length</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>Set Minimum Length of Increment Id</comment>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_padding>
+						<creditmemo_padding_char translate="label comment">
+                            <label>CreditMemo Increment Id Padding Character</label>
+							<frontend_type>Text</frontend_type>
+                            <validate>required-entry</validate>
+							<comment>CreditMemo Increment Id Padding Character</comment>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_padding_char>
+						<creditmemo_content_rearrange translate="label comment">
+                            <label>Rearrange</label>
+							<frontend_type>hidden</frontend_type>
+                            <validate>required-entry</validate>
+							<!-- <comment>Drag and Drop to rearrange the order</comment> -->
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_content_rearrange>
+						<creditmemo_splitting translate="label comment">
+                            <label>Splitting CreditMemo</label>
+							<frontend_type>select</frontend_type>
+							<source_model>customorderid/dropdown_split</source_model> 
+                            <!-- <validate>required-entry</validate> -->
+							<comment>Split Text-Date-time-Id eg: ORD-26/10/1991-07:30-108</comment>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</creditmemo_splitting>
+                     </fields>
+                </customorderid_creditmemo>				
+            </groups>
+        </customorderid_tab>
+    </sections>
+</config>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+		<reference name="head">  
+			<!--
+			<action method="addItem">
+				<type>skin_css</type><name>vijaystore/css/themes_smoothness_jquery.css</name><params/>
+			</action> 
+			-->
+			
+			<action method="addItem" > <!-- ifconfig="customorderid_tab/customorderid_setting/customorderid_active"> -->
+				<type>skin_css</type><name>vijaystore/css/customorderid.css</name><params/>
+			</action>
+			
+			<action method="addItem"> <!-- ifconfig="customorderid_tab/customorderid_setting/customorderid_active"> -->
+				<type>skin_js</type><name>vijaystore/js/jquery-1.10.2.js</name><params/>
+			</action>
+			<action method="addItem"> <!-- ifconfig="customorderid_tab/customorderid_setting/customorderid_active"> -->
+				<type>skin_js</type><name>vijaystore/js/jquery-ui.js</name><params/>
+			</action>
+			<action method="addItem"> <!-- ifconfig="customorderid_tab/customorderid_setting/customorderid_active"> -->
+				<type>skin_js</type><name>vijaystore/js/customorderid.js</name><params/>
+			</action>
+		 </reference>
+	</default>
+</layout> 
+

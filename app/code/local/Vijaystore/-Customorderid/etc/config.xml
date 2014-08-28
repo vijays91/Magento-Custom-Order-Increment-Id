@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vijaystore_Customorderid>
+            <version>1.0.0</version>
+        </Vijaystore_Customorderid>
+    </modules>
+	
+    <global>
+		<blocks>
+            <customorderid>
+                <class>Vijaystore_Customorderid_Block</class>
+            </customorderid>
+        </blocks>
+		
+		<models>
+			<customorderid>
+				<class>Vijaystore_Customorderid_Model</class>
+			</customorderid>
+			<eav>
+				<rewrite>
+					<entity_increment_numeric>Vijaystore_Customorderid_Model_Entity_Increment_Numeric</entity_increment_numeric>
+				</rewrite>
+			</eav>
+		</models>
+		
+		<helpers>
+			<customorderid>
+				<class>Vijaystore_Customorderid_Helper</class>
+			</customorderid>
+		</helpers>	
+		
+		<events>
+			<admin_system_config_changed_section_customorderid_tab>
+				<observers>
+					<customorderid_tab>
+						<type>singleton</type>
+						<class>Vijaystore_Customorderid_Model_Observer</class>
+						<method>setOrderId</method>
+					</customorderid_tab>
+				</observers>
+			</admin_system_config_changed_section_customorderid_tab>
+		</events> 
+    </global>
+	
+	
+	<admin>
+		<routers>
+			<customorderid>
+				<use>admin</use>
+				<args>
+					<module>Vijaystore_Customorderid</module>
+					<frontName>customorderid</frontName>
+				</args>
+			</customorderid>
+		</routers>
+	</admin>
+	
+	<adminhtml>
+		<layout>
+			<updates>
+				<customorderid module="customorderid">
+					<file>vijaystore/customorderid.xml</file>
+				</customorderid>
+			</updates>
+		</layout>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+				    <children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<customorderid_tab>
+											<title>Custom Order Id Setting</title>
+										</customorderid_tab>				
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+
+	<default>
+		<customorderid_tab>
+			<customorderid_setting>
+				<customorderid_active>0</customorderid_active>
+			</customorderid_setting>			
+			<customorderid_order>
+				<order_enable>1</order_enable>
+				<order_text>ORD</order_text>
+				<order_number>101</order_number>
+				<order_date_use>1</order_date_use>
+				<order_date>d-m-Y</order_date>
+				<order_time_use>1</order_time_use>
+				<order_time>h-i-s</order_time>
+				<order_increment>1</order_increment>
+				<order_padding>1</order_padding>
+				<order_padding_char>0</order_padding_char>
+				<order_content_rearrange>1,2,3,4</order_content_rearrange>
+				<order_splitting>-</order_splitting>
+			</customorderid_order>			
+			<customorderid_invoice>
+				<invoice_enable>1</invoice_enable>
+				<invoice_text>INV</invoice_text>
+				<invoice_number>101</invoice_number>
+				<invoice_date_use>1</invoice_date_use>
+				<invoice_date>d-m-Y</invoice_date>
+				<invoice_time_use>1</invoice_time_use>
+				<invoice_time>h:i:s</invoice_time>
+				<invoice_increment>1</invoice_increment>
+				<invoice_padding>1</invoice_padding>
+				<invoice_padding_char>0</invoice_padding_char>
+				<invoice_content_rearrange>1,2,3,4</invoice_content_rearrange>
+				<invoice_splitting>-</invoice_splitting>
+			</customorderid_invoice>
+			<customorderid_shipping>
+				<shipping_enable>1</shipping_enable>
+				<shipping_text>SHP</shipping_text>
+				<shipping_number>101</shipping_number>
+				<shipping_date_use>1</shipping_date_use>
+				<shipping_date>d-m-Y</shipping_date>
+				<shipping_time_use>1</shipping_time_use>
+				<shipping_time>h:i:s</shipping_time>
+				<shipping_increment>1</shipping_increment>
+				<shipping_padding>3</shipping_padding>
+				<shipping_padding_char>0</shipping_padding_char>
+				<shipping_content_rearrange>1,2,3,4</shipping_content_rearrange>
+				<shipping_splitting>-</shipping_splitting>
+			</customorderid_shipping>
+			<customorderid_creditmemo>
+				<creditmemo_enable>1</creditmemo_enable>
+				<creditmemo_text>CRD-MEM</creditmemo_text>
+				<creditmemo_number>101</creditmemo_number>
+				<creditmemo_date_use>1</creditmemo_date_use>
+				<creditmemo_date>Y-d-m</creditmemo_date>
+				<creditmemo_time_use>1</creditmemo_time_use>
+				<creditmemo_time>h:i:s</creditmemo_time>
+				<creditmemo_increment>1</creditmemo_increment>
+				<creditmemo_padding>1</creditmemo_padding>
+				<creditmemo_padding_char>0</creditmemo_padding_char>
+				<creditmemo_content_rearrange>1,2,3,4</creditmemo_content_rearrange>
+				<creditmemo_splitting>-</creditmemo_splitting>
+			</customorderid_creditmemo>
+		</customorderid_tab>
+	</default>
+	
+</config>

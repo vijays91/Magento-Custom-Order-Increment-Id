@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Vijaystore_Customorderid>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Vijaystore_Customorderid>
+    </modules>
+</config>
